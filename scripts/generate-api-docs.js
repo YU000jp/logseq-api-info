@@ -27,12 +27,30 @@ function extractAPIDefinitions(content, filename) {
     classes: []
   };
 
-  // Extract interfaces
-  const interfaceRegex = /export interface\s+(\w+)(?:\s+extends\s+[^{]+)?\s*{([^}]+(?:{[^}]*}[^}]*)*)}/gs;
+  // Extract interfaces (handle nested braces)
+  function findMatchingBrace(str, startIdx) {
+    let depth = 0;
+    for (let i = startIdx; i < str.length; i++) {
+      if (str[i] === '{') depth++;
+      else if (str[i] === '}') {
+        depth--;
+        if (depth === 0) return i;
+      }
+    }
+    return -1;
+  }
+
+  const interfaceDeclRegex = /export interface\s+(\w+)(?:\s+extends\s+[^{]+)?\s*{/g;
   let match;
-  
-  while ((match = interfaceRegex.exec(content)) !== null) {
-    const [fullMatch, name, body] = match;
+  while ((match = interfaceDeclRegex.exec(content)) !== null) {
+    const name = match[1];
+    const startIdx = match.index;
+    const bodyStart = content.indexOf('{', interfaceDeclRegex.lastIndex - 1);
+    if (bodyStart === -1) continue;
+    const bodyEnd = findMatchingBrace(content, bodyStart);
+    if (bodyEnd === -1) continue;
+    const fullMatch = content.slice(startIdx, bodyEnd + 1);
+    const body = content.slice(bodyStart + 1, bodyEnd);
     definitions.interfaces.push({
       name,
       body: body.trim(),
