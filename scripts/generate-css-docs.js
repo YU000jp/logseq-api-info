@@ -28,7 +28,7 @@ function extractCSSDefinitions(content, filename) {
   };
 
   // Extract CSS classes
-  const classRegex = /\.([a-zA-Z0-9_-]+)(?:\.[a-zA-Z0-9_-]+)*\s*{/g;
+  const classRegex = /\.([a-zA-Z0-9_-]+)/g;
   let match;
   
   while ((match = classRegex.exec(content)) !== null) {
