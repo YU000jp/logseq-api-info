@@ -95,11 +95,12 @@ function parseInterfaceMembers(body) {
     
     // Method signatures (contains parentheses)
     if (line.includes('(') && line.includes(')')) {
-      const methodMatch = line.match(/(\w+)\s*[<>:\w\s,]*\s*\((.*?)\)\s*:\s*(.+)/);
+      const methodMatch = line.match(/(\w+)\s*(<[^>]+>)?\s*\((.*?)\)\s*:\s*(.+)/);
       if (methodMatch) {
-        const [, name, params, returnType] = methodMatch;
+        const [, name, generics, params, returnType] = methodMatch;
         members.methods.push({
           name: name.trim(),
+          generics: generics ? generics.trim() : undefined,
           parameters: params.trim(),
           returnType: returnType.replace(/[;,]$/, '').trim()
         });
