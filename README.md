@@ -54,7 +54,7 @@ This repository serves as a comprehensive information hub for **Logseq plugin an
 
 ### Plugin API Overview
 
-Logseq provides a comprehensive JavaScript API for plugin developers. The API is exposed through the global `logseq` object and includes:
+Logseq provides a comprehensive **JavaScript/TypeScript API** for plugin developers. The API is exposed through the global `logseq` object and includes full TypeScript support with complete type definitions.
 
 #### Core API Categories
 - **Block Operations**: Create, read, update, and delete blocks
@@ -65,10 +65,49 @@ Logseq provides a comprehensive JavaScript API for plugin developers. The API is
 - **File System**: Asset management and file operations
 - **Settings & Config**: Plugin configuration and user preferences
 
-#### Getting Started with Plugin Development
+#### TypeScript Plugin Development
+
+**Full TypeScript Support**: This repository contains the complete TypeScript SDK (`libs/` directory) with:
+- 📘 **Complete Type Definitions**: Full TypeScript interfaces and types (`libs/index.d.ts`)
+- 🔧 **TypeScript Source**: Plugin API implementation in TypeScript (`libs/src/`)
+- ⚙️ **Build Configuration**: Ready-to-use `tsconfig.json` and build scripts
+- 🛠️ **Development Tools**: Debugging utilities and development helpers
+
+#### Getting Started with TypeScript Plugin Development
+
+```typescript
+// TypeScript plugin structure with full type safety
+import { LSPluginBaseInfo, BlockEntity } from '@logseq/libs'
+
+const main = async () => {
+  // Register a typed slash command
+  logseq.Editor.registerSlashCommand('My Command', async () => {
+    const block: BlockEntity | null = await logseq.Editor.getCurrentBlock();
+    if (block) {
+      await logseq.Editor.updateBlock(block.uuid, 'Hello from my TypeScript plugin!');
+    }
+  });
+  
+  // Register a UI component with type-safe options
+  logseq.App.registerUIItem('toolbar', {
+    key: 'my-plugin-button',
+    template: `<button data-on-click="handleClick">My Plugin</button>`
+  });
+  
+  // Type-safe event handling
+  logseq.App.onMacroRendererSlotted(({ slot, payload }) => {
+    console.log('Slot:', slot, 'Payload:', payload);
+  });
+}
+
+// Initialize with error handling
+logseq.ready(main).catch(console.error);
+```
+
+#### JavaScript Plugin Development
 
 ```javascript
-// Basic plugin structure
+// Basic JavaScript plugin structure
 function main() {
   // Register a slash command
   logseq.Editor.registerSlashCommand('My Command', async () => {
@@ -91,10 +130,56 @@ logseq.ready(main).catch(console.error);
 
 ### Key Development Resources
 
+- **TypeScript SDK**: Complete TypeScript support in `libs/` directory
+  - 📘 **Type Definitions**: `libs/index.d.ts` - Complete API types
+  - 🔧 **Source Code**: `libs/src/` - TypeScript implementation
+  - ⚙️ **Configuration**: `libs/tsconfig.json` - TypeScript config
+  - 📦 **Package**: `@logseq/libs` - NPM package for plugin development
 - **API Documentation**: Available in `.copilot/api-info.md`
-- **Code Examples**: Practical examples throughout this repository
+- **Code Examples**: Practical TypeScript and JavaScript examples throughout this repository
 - **Plugin Templates**: Starter templates for common plugin types
 - **Development Tools**: Debugging and testing utilities
+
+#### TypeScript Development Setup
+
+1. **Install the SDK**:
+   ```bash
+   npm install @logseq/libs
+   # or
+   yarn add @logseq/libs
+   ```
+
+2. **TypeScript Configuration** (`tsconfig.json`):
+   ```json
+   {
+     "compilerOptions": {
+       "target": "ESNext",
+       "module": "ESNext",
+       "moduleResolution": "node",
+       "allowJs": true,
+       "jsx": "react",
+       "declaration": true,
+       "esModuleInterop": true,
+       "skipLibCheck": true
+     },
+     "include": ["src/**/*.ts"]
+   }
+   ```
+
+3. **Plugin Manifest** (`package.json`):
+   ```json
+   {
+     "logseq": {
+       "id": "your-plugin-id",
+       "title": "Your Plugin Title",
+       "main": "dist/index.js"
+     },
+     "main": "dist/index.js",
+     "dependencies": {
+       "@logseq/libs": "latest"
+     }
+   }
+   ```
 
 ## 🎨 Theme Development
 
@@ -172,9 +257,12 @@ This is a **fork** of the main [logseq/logseq](https://github.com/logseq/logseq)
 ### For Plugin Developers
 
 1. **Study the API**: Review `.copilot/api-info.md` for comprehensive API documentation
-2. **Explore Examples**: Look at plugin examples in the community
-3. **Set up Development**: Use the official plugin template
-4. **Join the Community**: Connect with other developers on Discord
+2. **Choose Your Language**: 
+   - **TypeScript**: Use the [TypeScript template](https://github.com/logseq/logseq-plugin-template-typescript) for type safety
+   - **JavaScript**: Use the [JavaScript template](https://github.com/logseq/logseq-plugin-template) for simplicity
+3. **Install Dependencies**: Add `@logseq/libs` for TypeScript support or API access
+4. **Explore Examples**: Look at plugin examples in the community and `libs/src/` directory
+5. **Join the Community**: Connect with other developers on Discord
 
 ### For Theme Developers
 
@@ -203,6 +291,14 @@ This is a **fork** of the main [logseq/logseq](https://github.com/logseq/logseq)
 - **[Forum](https://discuss.logseq.com/)** - Community discussions and support
 - **[Plugin Marketplace](https://github.com/logseq/marketplace)** - Browse and submit plugins
 - **[Theme Gallery](https://github.com/logseq/awesome-logseq#-themes)** - Community themes
+
+### Developer Tools & Templates
+- **[Plugin Template (JavaScript)](https://github.com/logseq/logseq-plugin-template)** - Official JavaScript plugin starter template
+- **[TypeScript Plugin Template](https://github.com/logseq/logseq-plugin-template-typescript)** - Official TypeScript plugin template
+- **[Plugin SDK](https://github.com/logseq/logseq-plugin-sdk)** - Development tools and utilities
+- **[Vite Plugin Template](https://github.com/logseq/vite-plugin-template)** - Modern plugin development template with Vite
+- **[@logseq/libs](https://www.npmjs.com/package/@logseq/libs)** - TypeScript SDK package on NPM
+- **[Plugin Samples](https://github.com/logseq/logseq-plugin-samples)** - Example plugins and code samples
 
 ---
 

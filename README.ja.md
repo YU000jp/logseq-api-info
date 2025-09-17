@@ -54,7 +54,7 @@
 
 ### プラグイン API 概要
 
-Logseq はプラグイン開発者向けに包括的な JavaScript API を提供しています。API はグローバルな `logseq` オブジェクトを通じて公開され、以下を含みます：
+Logseq はプラグイン開発者向けに包括的な **JavaScript/TypeScript API** を提供しています。API はグローバルな `logseq` オブジェクトを通じて公開され、完全な TypeScript サポートと型定義を含みます。
 
 #### 主要な API カテゴリ
 - **ブロック操作**：ブロックの作成、読み取り、更新、削除
@@ -65,10 +65,49 @@ Logseq はプラグイン開発者向けに包括的な JavaScript API を提供
 - **ファイルシステム**：アセット管理とファイル操作
 - **設定・構成**：プラグイン設定とユーザー設定
 
-#### プラグイン開発の開始方法
+#### TypeScript プラグイン開発
+
+**完全な TypeScript サポート**: このリポジトリには完全な TypeScript SDK（`libs/` ディレクトリ）が含まれます：
+- 📘 **完全な型定義**: TypeScript インターフェースと型（`libs/index.d.ts`）
+- 🔧 **TypeScript ソース**: TypeScript でのプラグイン API 実装（`libs/src/`）
+- ⚙️ **ビルド構成**: すぐに使える `tsconfig.json` とビルドスクリプト
+- 🛠️ **開発ツール**: デバッグユーティリティと開発ヘルパー
+
+#### TypeScript プラグイン開発の開始方法
+
+```typescript
+// 完全な型安全性を持つ TypeScript プラグイン構造
+import { LSPluginBaseInfo, BlockEntity } from '@logseq/libs'
+
+const main = async () => {
+  // 型付きスラッシュコマンドの登録
+  logseq.Editor.registerSlashCommand('My Command', async () => {
+    const block: BlockEntity | null = await logseq.Editor.getCurrentBlock();
+    if (block) {
+      await logseq.Editor.updateBlock(block.uuid, 'Hello from my TypeScript plugin!');
+    }
+  });
+  
+  // 型安全なオプションでUI コンポーネントの登録
+  logseq.App.registerUIItem('toolbar', {
+    key: 'my-plugin-button',
+    template: `<button data-on-click="handleClick">My Plugin</button>`
+  });
+  
+  // 型安全なイベント処理
+  logseq.App.onMacroRendererSlotted(({ slot, payload }) => {
+    console.log('Slot:', slot, 'Payload:', payload);
+  });
+}
+
+// エラーハンドリングで初期化
+logseq.ready(main).catch(console.error);
+```
+
+#### JavaScript プラグイン開発
 
 ```javascript
-// 基本的なプラグイン構造
+// 基本的な JavaScript プラグイン構造
 function main() {
   // スラッシュコマンドの登録
   logseq.Editor.registerSlashCommand('My Command', async () => {
@@ -91,10 +130,56 @@ logseq.ready(main).catch(console.error);
 
 ### 主要な開発リソース
 
+- **TypeScript SDK**: `libs/` ディレクトリに完全な TypeScript サポート
+  - 📘 **型定義**: `libs/index.d.ts` - 完全な API 型
+  - 🔧 **ソースコード**: `libs/src/` - TypeScript 実装
+  - ⚙️ **設定**: `libs/tsconfig.json` - TypeScript 設定
+  - 📦 **パッケージ**: `@logseq/libs` - プラグイン開発用 NPM パッケージ
 - **API ドキュメント**：`.copilot/api-info.md` で利用可能
-- **コード例**：このリポジトリ全体の実践的な例
+- **コード例**：このリポジトリ全体の TypeScript と JavaScript の実践的な例
 - **プラグインテンプレート**：一般的なプラグインタイプのスターターテンプレート
 - **開発ツール**：デバッグとテストユーティリティ
+
+#### TypeScript 開発セットアップ
+
+1. **SDK のインストール**:
+   ```bash
+   npm install @logseq/libs
+   # または
+   yarn add @logseq/libs
+   ```
+
+2. **TypeScript 設定** (`tsconfig.json`):
+   ```json
+   {
+     "compilerOptions": {
+       "target": "ESNext",
+       "module": "ESNext",
+       "moduleResolution": "node",
+       "allowJs": true,
+       "jsx": "react",
+       "declaration": true,
+       "esModuleInterop": true,
+       "skipLibCheck": true
+     },
+     "include": ["src/**/*.ts"]
+   }
+   ```
+
+3. **プラグインマニフェスト** (`package.json`):
+   ```json
+   {
+     "logseq": {
+       "id": "your-plugin-id",
+       "title": "Your Plugin Title",
+       "main": "dist/index.js"
+     },
+     "main": "dist/index.js",
+     "dependencies": {
+       "@logseq/libs": "latest"
+     }
+   }
+   ```
 
 ## 🎨 テーマ開発
 
@@ -172,9 +257,12 @@ Logseq は主要なスタイリングフレームワークとして **TailwindCS
 ### プラグイン開発者向け
 
 1. **API を学習**：包括的な API ドキュメントについては `.copilot/api-info.md` を確認
-2. **例を探索**：コミュニティのプラグイン例を見る
-3. **開発環境の設定**：公式プラグインテンプレートを使用
-4. **コミュニティに参加**：Discord で他の開発者とつながる
+2. **言語を選択**：
+   - **TypeScript**: 型安全性のために [TypeScript テンプレート](https://github.com/logseq/logseq-plugin-template-typescript) を使用
+   - **JavaScript**: シンプルさのために [JavaScript テンプレート](https://github.com/logseq/logseq-plugin-template) を使用
+3. **依存関係をインストール**: TypeScript サポートや API アクセスのために `@logseq/libs` を追加
+4. **例を探索**：コミュニティのプラグイン例と `libs/src/` ディレクトリを見る
+5. **コミュニティに参加**：Discord で他の開発者とつながる
 
 ### テーマ開発者向け
 
@@ -205,9 +293,12 @@ Logseq は主要なスタイリングフレームワークとして **TailwindCS
 - **[テーマギャラリー](https://github.com/logseq/awesome-logseq#-themes)** - コミュニティテーマ
 
 ### 開発者ツール
-- **[プラグインテンプレート](https://github.com/logseq/logseq-plugin-template)** - 公式プラグインスターターテンプレート
+- **[プラグインテンプレート (JavaScript)](https://github.com/logseq/logseq-plugin-template)** - 公式 JavaScript プラグインスターターテンプレート
+- **[TypeScript プラグインテンプレート](https://github.com/logseq/logseq-plugin-template-typescript)** - 公式 TypeScript プラグインテンプレート
 - **[プラグイン SDK](https://github.com/logseq/logseq-plugin-sdk)** - 開発ツールとユーティリティ
-- **[Vite プラグインテンプレート](https://github.com/logseq/vite-plugin-template)** - モダンなプラグイン開発テンプレート
+- **[Vite プラグインテンプレート](https://github.com/logseq/vite-plugin-template)** - Vite を使ったモダンなプラグイン開発テンプレート
+- **[@logseq/libs](https://www.npmjs.com/package/@logseq/libs)** - NPM の TypeScript SDK パッケージ
+- **[プラグインサンプル](https://github.com/logseq/logseq-plugin-samples)** - プラグインの例とコードサンプル
 
 ---
 

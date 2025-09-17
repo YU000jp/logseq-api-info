@@ -2,9 +2,46 @@
 
 ## API Structure Overview
 
-The Logseq Plugin API is located in `src/main/logseq/` and consists of two main parts:
+The Logseq Plugin API consists of both ClojureScript implementation (`src/main/logseq/`) and **TypeScript SDK** (`libs/`) providing complete type safety for plugin development.
 
-### 1. Core API (`src/main/logseq/api.cljs`)
+### 1. TypeScript SDK (`libs/`)
+The TypeScript SDK provides complete type definitions and utilities for plugin development:
+
+#### TypeScript API Structure:
+- **`libs/index.d.ts`** - Global type definitions and main API interface
+- **`libs/src/LSPlugin.ts`** - Core plugin system types and interfaces
+- **`libs/src/callable.apis.ts`** - Callable API methods and their signatures
+- **`libs/src/modules/`** - Modular API implementations:
+  - `LSPlugin.Request.ts` - HTTP request utilities
+  - `LSPlugin.Search.ts` - Search functionality
+  - `LSPlugin.Storage.ts` - Storage management
+  - `LSPlugin.Experiments.ts` - Experimental features
+- **`libs/src/LSPlugin.core.ts`** - Core plugin lifecycle management
+- **`libs/src/helpers.ts`** - Utility functions and helpers
+
+#### TypeScript Development Benefits:
+- 🔷 **Type Safety**: Complete compile-time type checking
+- 📘 **IntelliSense**: Full IDE support with autocomplete
+- 🐛 **Error Prevention**: Catch errors before runtime
+- 📖 **Documentation**: Types serve as inline documentation
+- 🔄 **Refactoring**: Safe code refactoring with type guarantees
+
+#### Installation and Setup:
+```bash
+npm install @logseq/libs
+```
+
+```typescript
+// Type-safe plugin development
+import { BlockEntity, PageEntity } from '@logseq/libs'
+
+// Global logseq object is fully typed
+declare global {
+  var logseq: ILSPluginUser
+}
+```
+
+### 2. Core API (`src/main/logseq/api.cljs`)
 The main API namespace that exposes functionality to plugins. This includes:
 
 #### Key API Categories:
@@ -25,7 +62,7 @@ The API integrates with core Logseq systems:
 - Editor functionality (`frontend.handler.editor`)
 - Search capabilities (`frontend.handler.search`)
 
-### 2. SDK (`src/main/logseq/sdk/`)
+### 3. ClojureScript SDK (`src/main/logseq/sdk/`)
 Software Development Kit providing utilities for plugin development:
 
 - **`sdk/core.cljs`** - Core SDK functionality and versioning (version: 20230330)
@@ -36,7 +73,7 @@ Software Development Kit providing utilities for plugin development:
 - **`sdk/debug.cljs`** - Debugging tools for plugin development
 - **`sdk/experiments.cljs`** - Experimental features and APIs
 
-### 3. Specialized APIs
+### 4. Specialized APIs
 - **`api/block.cljs`** - Block-specific operations and utilities
 
 ## Plugin Development Context
@@ -67,6 +104,180 @@ Plugins can interact with Logseq's DOM structure for:
 - **Interactive Elements**: Add buttons, forms, and controls
 - **Content Manipulation**: Transform rendered content
 - **Event Handling**: Respond to user interactions
+
+## TypeScript Plugin Development
+
+### Complete Type Definitions
+
+The TypeScript SDK provides comprehensive type definitions for all Logseq APIs:
+
+#### Core Types:
+```typescript
+// Block and Page entities
+interface BlockEntity {
+  uuid: string
+  content: string
+  page: { id: number }
+  format: 'markdown' | 'org'
+  properties?: Record<string, any>
+  // ... more properties
+}
+
+interface PageEntity {
+  id: number
+  name: string
+  originalName: string
+  properties?: Record<string, any>
+  // ... more properties
+}
+
+// Plugin lifecycle
+interface LSPluginBaseInfo {
+  id: string
+  title: string
+  description?: string
+  version?: string
+}
+```
+
+#### API Method Types:
+```typescript
+// Editor API
+interface ILSPluginEditor {
+  getCurrentBlock(): Promise<BlockEntity | null>
+  updateBlock(uuid: string, content: string): Promise<void>
+  registerSlashCommand(name: string, handler: () => void): void
+  // ... more methods with full type signatures
+}
+
+// App API
+interface ILSPluginApp {
+  registerUIItem(type: string, options: UIItemOptions): void
+  showMsg(content: string, status?: 'success' | 'warning' | 'error'): void
+  // ... more methods
+}
+```
+
+### TypeScript Plugin Template Structure
+
+```typescript
+// main.ts - Entry point with full types
+import '@logseq/libs'
+
+async function main() {
+  console.log('Plugin loaded')
+  
+  // Type-safe API usage
+  logseq.Editor.registerSlashCommand('Hello TypeScript', async () => {
+    const block = await logseq.Editor.getCurrentBlock()
+    if (block) {
+      await logseq.Editor.updateBlock(
+        block.uuid, 
+        `${block.content}\n- Hello from TypeScript plugin! 🎉`
+      )
+    }
+  })
+  
+  // Type-safe settings
+  logseq.useSettingsSchema([
+    {
+      key: 'greeting',
+      type: 'string',
+      title: 'Greeting Message',
+      description: 'Custom greeting message',
+      default: 'Hello'
+    }
+  ])
+}
+
+// Initialize with proper error handling
+logseq.ready(main).catch(console.error)
+```
+
+### Build Configuration
+
+#### TypeScript Configuration (`tsconfig.json`):
+```json
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "declaration": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
+```
+
+#### Package Configuration (`package.json`):
+```json
+{
+  "name": "logseq-plugin-typescript-example",
+  "main": "dist/index.js",
+  "logseq": {
+    "id": "typescript-example",
+    "title": "TypeScript Example Plugin",
+    "main": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@logseq/libs": "^0.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.0"
+  }
+}
+```
+
+### Advanced TypeScript Features
+
+#### Generic API Usage:
+```typescript
+// Type-safe database queries
+const queryResult = await logseq.DB.datascriptQuery<BlockEntity[]>(`
+  [:find (pull ?b [*])
+   :where [?b :block/content ?content]
+          [(clojure.string/includes? ?content "typescript")]]
+`)
+
+// Type-safe storage operations
+interface PluginSettings {
+  theme: 'light' | 'dark'
+  autoSave: boolean
+  customValues: Record<string, string>
+}
+
+const settings = await logseq.Assets.loadUserConfig<PluginSettings>()
+```
+
+#### Custom Hook Types:
+```typescript
+// Type-safe event handlers
+logseq.App.onMacroRendererSlotted(({ slot, payload }: {
+  slot: string
+  payload: { 
+    arguments: string[]
+    uuid: string
+  }
+}) => {
+  // Fully typed event handling
+  console.log(`Macro ${slot} rendered with:`, payload)
+})
+```
 
 ## Theme Development
 
