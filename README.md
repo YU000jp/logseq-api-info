@@ -137,6 +137,9 @@ logseq.ready(main).catch(console.error);
   - 📦 **Package**: `@logseq/libs` - NPM package for plugin development
 - **API Documentation**: Available in `.copilot/api-info.md`
 - **Code Examples**: Practical TypeScript and JavaScript examples throughout this repository
+  - 📁 **`examples/typescript-plugins/`** - Complete TypeScript plugin examples
+  - 🔰 **Basic Plugin** - Simple TypeScript plugin template
+  - 🔍 **Database Query Plugin** - Advanced DataScript queries with types
 - **Plugin Templates**: Starter templates for common plugin types
 - **Development Tools**: Debugging and testing utilities
 

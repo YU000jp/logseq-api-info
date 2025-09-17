@@ -137,6 +137,9 @@ logseq.ready(main).catch(console.error);
   - 📦 **パッケージ**: `@logseq/libs` - プラグイン開発用 NPM パッケージ
 - **API ドキュメント**：`.copilot/api-info.md` で利用可能
 - **コード例**：このリポジトリ全体の TypeScript と JavaScript の実践的な例
+  - 📁 **`examples/typescript-plugins/`** - 完全な TypeScript プラグイン例
+  - 🔰 **基本プラグイン** - シンプルな TypeScript プラグインテンプレート
+  - 🔍 **データベースクエリプラグイン** - 型を使った高度な DataScript クエリ
 - **プラグインテンプレート**：一般的なプラグインタイプのスターターテンプレート
 - **開発ツール**：デバッグとテストユーティリティ
 
