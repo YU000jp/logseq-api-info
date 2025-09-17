@@ -1,0 +1,31 @@
+{
+  "name": "logseq-basic-typescript-plugin",
+  "version": "1.0.0",
+  "description": "Basic TypeScript plugin example for Logseq",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "logseq": {
+    "id": "basic-typescript-plugin",
+    "title": "Basic TypeScript Plugin",
+    "description": "A simple example demonstrating TypeScript plugin development",
+    "main": "dist/index.js",
+    "version": "1.0.0"
+  },
+  "keywords": [
+    "logseq",
+    "plugin",
+    "typescript"
+  ],
+  "author": "Logseq Community",
+  "license": "MIT",
+  "dependencies": {
+    "@logseq/libs": "^0.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.0"
+  }
+}

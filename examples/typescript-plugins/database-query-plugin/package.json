@@ -1,0 +1,34 @@
+{
+  "name": "logseq-database-query-plugin",
+  "version": "1.0.0",
+  "description": "Advanced database query plugin example for Logseq with TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "logseq": {
+    "id": "database-query-plugin",
+    "title": "Database Query Plugin",
+    "description": "Advanced DataScript queries with TypeScript type safety",
+    "main": "dist/index.js",
+    "version": "1.0.0"
+  },
+  "keywords": [
+    "logseq",
+    "plugin",
+    "typescript",
+    "database",
+    "query",
+    "datascript"
+  ],
+  "author": "Logseq Community",
+  "license": "MIT",
+  "dependencies": {
+    "@logseq/libs": "^0.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.0"
+  }
+}
