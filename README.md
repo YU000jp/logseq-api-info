@@ -204,11 +204,6 @@ This is a **fork** of the main [logseq/logseq](https://github.com/logseq/logseq)
 - **[Plugin Marketplace](https://github.com/logseq/marketplace)** - Browse and submit plugins
 - **[Theme Gallery](https://github.com/logseq/awesome-logseq#-themes)** - Community themes
 
-### Developer Tools
-- **[Plugin Template](https://github.com/logseq/logseq-plugin-template)** - Official plugin starter template
-- **[Plugin SDK](https://github.com/logseq/logseq-plugin-sdk)** - Development tools and utilities
-- **[Vite Plugin Template](https://github.com/logseq/vite-plugin-template)** - Modern plugin development template
-
 ---
 
 *This repository is maintained as a community resource for Logseq developers. For the main Logseq application, please visit [logseq/logseq](https://github.com/logseq/logseq).*
