@@ -108,7 +108,8 @@
     "postinstall": "yarn tldraw:build && yarn amplify:build && yarn ui:build",
     "docs:generate": "node scripts/generate-all-docs.js",
     "docs:api": "node scripts/generate-api-docs.js",
-    "docs:css": "node scripts/generate-css-docs.js"
+    "docs:css": "node scripts/generate-css-docs.js",
+    "docs:analysis": "node scripts/generate-logseq-api-analysis.js"
   },
   "dependencies": {
     "@capacitor-community/safe-area": "7.0.0-alpha.1",

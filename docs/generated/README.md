@@ -11,6 +11,8 @@ This directory contains auto-generated documentation extracted from the Logseq c
 ### API Reference
 - **[Plugin API Reference](./plugin-api-reference.md)** - Complete TypeScript API documentation
 - **[Plugin API Definitions JSON](./plugin-api-definitions.json)** - Machine-readable API definitions
+- **[Logseq API Functionality Analysis](./logseq-api-functionality-analysis.md)** - Deep analysis of core Logseq API
+- **[Logseq API Showcase](./logseq-api-showcase.md)** - Practical examples and use cases
 
 ### Key APIs
 - **IAppProxy** - Application-level functionality
@@ -86,5 +88,5 @@ Run `npm run docs:generate` to update all documentation.
 
 ---
 
-*Last generated: 2025-09-17T14:41:07.685Z*
+*Last generated: 2025-09-17T14:52:42.970Z*
 *Generated from Logseq codebase*

@@ -11,6 +11,8 @@
 ### API リファレンス
 - **[Plugin API Reference](./plugin-api-reference.md)** - 完全な TypeScript API ドキュメント
 - **[Plugin API Definitions JSON](./plugin-api-definitions.json)** - 機械可読な API 定義
+- **[Logseq API Functionality Analysis](./logseq-api-functionality-analysis.md)** - コア Logseq API の詳細分析
+- **[Logseq API Showcase](./logseq-api-showcase.md)** - 実用的な例と使用例
 
 ### 主要な API
 - **IAppProxy** - アプリケーションレベルの機能
@@ -86,5 +88,5 @@ node scripts/generate-css-docs.js
 
 ---
 
-*最終生成日時: 2025-09-17T14:41:07.685Z*
+*最終生成日時: 2025-09-17T14:52:42.970Z*
 *Logseq コードベースから生成*

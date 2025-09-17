@@ -9,6 +9,7 @@ const fs = require('fs');
 const path = require('path');
 const { generateAPIDocs } = require('./generate-api-docs');
 const { generateCSSAndDOMDocs } = require('./generate-css-docs');
+const { analyzeLogseqAPI } = require('./generate-logseq-api-analysis');
 
 const OUTPUT_DIR = path.join(__dirname, '../docs/generated');
 
@@ -29,6 +30,8 @@ This directory contains auto-generated documentation extracted from the Logseq c
 ### API Reference
 - **[Plugin API Reference](./plugin-api-reference.md)** - Complete TypeScript API documentation
 - **[Plugin API Definitions JSON](./plugin-api-definitions.json)** - Machine-readable API definitions
+- **[Logseq API Functionality Analysis](./logseq-api-functionality-analysis.md)** - Deep analysis of core Logseq API
+- **[Logseq API Showcase](./logseq-api-showcase.md)** - Practical examples and use cases
 
 ### Key APIs
 - **IAppProxy** - Application-level functionality
@@ -128,6 +131,8 @@ function generateJapaneseDocumentation() {
 ### API リファレンス
 - **[Plugin API Reference](./plugin-api-reference.md)** - 完全な TypeScript API ドキュメント
 - **[Plugin API Definitions JSON](./plugin-api-definitions.json)** - 機械可読な API 定義
+- **[Logseq API Functionality Analysis](./logseq-api-functionality-analysis.md)** - コア Logseq API の詳細分析
+- **[Logseq API Showcase](./logseq-api-showcase.md)** - 実用的な例と使用例
 
 ### 主要な API
 - **IAppProxy** - アプリケーションレベルの機能
@@ -227,6 +232,7 @@ function updatePackageJson() {
     packageJson.scripts['docs:generate'] = 'node scripts/generate-all-docs.js';
     packageJson.scripts['docs:api'] = 'node scripts/generate-api-docs.js';
     packageJson.scripts['docs:css'] = 'node scripts/generate-css-docs.js';
+    packageJson.scripts['docs:analysis'] = 'node scripts/generate-logseq-api-analysis.js';
     
     fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
     console.log('✅ Updated package.json with documentation scripts');
@@ -251,6 +257,10 @@ function generateAllDocumentation() {
   // Generate CSS and DOM documentation
   console.log('\n🎨 Generating CSS and DOM documentation...');
   generateCSSAndDOMDocs();
+  
+  // Generate Logseq API analysis and showcase
+  console.log('\n🔍 Generating Logseq API analysis and showcase...');
+  analyzeLogseqAPI();
   
   // Generate documentation index
   console.log('\n📚 Generating documentation index...');

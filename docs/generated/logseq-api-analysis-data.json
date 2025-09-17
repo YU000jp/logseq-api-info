@@ -1,0 +1,1478 @@
+{
+  "exportedFunctions": [
+    {
+      "name": "convert?to-built-in-property-name",
+      "parameters": [
+        "property-name"
+      ],
+      "docstring": "",
+      "namespace": "logseq.api.block",
+      "file": "api/block.cljs"
+    },
+    {
+      "name": "sanitize-user-property-name",
+      "parameters": [
+        "k"
+      ],
+      "docstring": "",
+      "namespace": "logseq.api.block",
+      "file": "api/block.cljs"
+    },
+    {
+      "name": "resolve-property-prefix-for-db",
+      "parameters": [
+        "plugin"
+      ],
+      "docstring": "",
+      "namespace": "logseq.api.block",
+      "file": "api/block.cljs"
+    },
+    {
+      "name": "get-db-ident-for-user-property-name",
+      "parameters": [],
+      "docstring": "",
+      "namespace": "logseq.api.block",
+      "file": "api/block.cljs"
+    },
+    {
+      "name": "plugin-property-key?",
+      "parameters": [
+        "ident"
+      ],
+      "docstring": "",
+      "namespace": "logseq.api.block",
+      "file": "api/block.cljs"
+    },
+    {
+      "name": "into-readable-db-properties",
+      "parameters": [
+        "properties"
+      ],
+      "docstring": "",
+      "namespace": "logseq.api.block",
+      "file": "api/block.cljs"
+    },
+    {
+      "name": "into-properties",
+      "parameters": [],
+      "docstring": "",
+      "namespace": "logseq.api.block",
+      "file": "api/block.cljs"
+    },
+    {
+      "name": "parse-property-json-value-if-need",
+      "parameters": [
+        "ident",
+        "property-value"
+      ],
+      "docstring": "",
+      "namespace": "logseq.api.block",
+      "file": "api/block.cljs"
+    },
+    {
+      "name": "infer-property-value-type-to-save!",
+      "parameters": [
+        "ident",
+        "value"
+      ],
+      "docstring": "",
+      "namespace": "logseq.api.block",
+      "file": "api/block.cljs"
+    },
+    {
+      "name": "save-db-based-block-properties!",
+      "parameters": [],
+      "docstring": "",
+      "namespace": "logseq.api.block",
+      "file": "api/block.cljs"
+    },
+    {
+      "name": "<sync-children-blocks!",
+      "parameters": [
+        "block"
+      ],
+      "docstring": "",
+      "namespace": "logseq.api.block",
+      "file": "api/block.cljs"
+    },
+    {
+      "name": "get_block",
+      "parameters": [
+        "id-or-uuid",
+        "opts"
+      ],
+      "docstring": "",
+      "namespace": "logseq.api.block",
+      "file": "api/block.cljs"
+    },
+    {
+      "name": "install-plugin-hook",
+      "parameters": [
+        "pid",
+        "hook",
+        "opts"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "uninstall-plugin-hook",
+      "parameters": [
+        "pid",
+        "hook-or-all"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "should-exec-plugin-hook",
+      "parameters": [
+        "pid",
+        "hook"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "get_state_from_store",
+      "parameters": [
+        "path"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "set_state_from_store",
+      "parameters": [
+        "path",
+        "value"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "get_app_info",
+      "parameters": [],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "write_dotdir_file",
+      "parameters": [
+        "file",
+        "content",
+        "sub-root"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "write_assetsdir_file",
+      "parameters": [
+        "file",
+        "content",
+        "sub-root"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "load_installed_web_plugins",
+      "parameters": [],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "save_installed_web_plugin",
+      "parameters": [],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "unlink_installed_web_plugin",
+      "parameters": [
+        "key"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "unregister_plugin_simple_command",
+      "parameters": [
+        "pid"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "register_search_service",
+      "parameters": [
+        "pid",
+        "name",
+        "opts"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "unregister_search_services",
+      "parameters": [
+        "pid"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "get_external_plugin",
+      "parameters": [
+        "pid"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "invoke_external_plugin_cmd",
+      "parameters": [
+        "pid",
+        "cmd-group",
+        "cmd-key",
+        "cmd-args"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "get_page",
+      "parameters": [
+        "id-or-page-name"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "get_all_pages",
+      "parameters": [],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "create_page",
+      "parameters": [
+        "name",
+        "properties",
+        "opts"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "create_journal_page",
+      "parameters": [
+        "date"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "delete_page",
+      "parameters": [
+        "name"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "open_in_right_sidebar",
+      "parameters": [
+        "block-id-or-uuid"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "new_block_uuid",
+      "parameters": [],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "insert_block",
+      "parameters": [
+        "block-uuid-or-page-name",
+        "content",
+        "opts"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "get_property",
+      "parameters": [
+        "k"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "upsert_property",
+      "parameters": [],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "remove_property",
+      "parameters": [
+        "k"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "upsert_block_property",
+      "parameters": [
+        "block-uuid",
+        "key",
+        "value"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "remove_block_property",
+      "parameters": [
+        "block-uuid",
+        "key"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "get_block_property",
+      "parameters": [
+        "block-uuid",
+        "key"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "get_page_properties",
+      "parameters": [
+        "id-or-page-name"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "get_page_linked_references",
+      "parameters": [
+        "page-name-or-uuid"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "get_pages_from_namespace",
+      "parameters": [
+        "ns"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "get_pages_tree_from_namespace",
+      "parameters": [
+        "ns"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "prepend_block_in_page",
+      "parameters": [
+        "uuid-or-page-name",
+        "content",
+        "opts"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "append_block_in_page",
+      "parameters": [
+        "uuid-or-page-name",
+        "content",
+        "opts"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "validate_external_plugins",
+      "parameters": [
+        "urls"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "q",
+      "parameters": [
+        "query-string"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "datascript_query",
+      "parameters": [
+        "query",
+        "&",
+        "inputs"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "custom_query",
+      "parameters": [
+        "query-string"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "download_graph_db",
+      "parameters": [],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "download_graph_pages",
+      "parameters": [],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "exec_git_command",
+      "parameters": [
+        "args"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "exper_load_scripts",
+      "parameters": [
+        "pid",
+        "&",
+        "scripts"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "exper_request",
+      "parameters": [
+        "pid",
+        "options"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "http_request_abort",
+      "parameters": [
+        "req-id"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "get_template",
+      "parameters": [
+        "name"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "insert_template",
+      "parameters": [
+        "target-uuid",
+        "template-name"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "exist_template",
+      "parameters": [
+        "name"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "create_template",
+      "parameters": [
+        "target-uuid",
+        "template-name",
+        "opts"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "remove_template",
+      "parameters": [
+        "name"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "search",
+      "parameters": [
+        "q'",
+        "&",
+        "[opts"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "set_focused_settings",
+      "parameters": [
+        "pid"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "force_save_graph",
+      "parameters": [],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "get-caller-plugin-id",
+      "parameters": [],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    },
+    {
+      "name": "get-property",
+      "parameters": [
+        "plugin",
+        "k"
+      ],
+      "docstring": "",
+      "namespace": "^:no-doc",
+      "file": "api.cljs"
+    }
+  ],
+  "categorizedFunctions": {
+    "Block Management": [
+      {
+        "name": "convert?to-built-in-property-name",
+        "parameters": [
+          "property-name"
+        ],
+        "docstring": "",
+        "namespace": "logseq.api.block",
+        "file": "api/block.cljs"
+      },
+      {
+        "name": "sanitize-user-property-name",
+        "parameters": [
+          "k"
+        ],
+        "docstring": "",
+        "namespace": "logseq.api.block",
+        "file": "api/block.cljs"
+      },
+      {
+        "name": "resolve-property-prefix-for-db",
+        "parameters": [
+          "plugin"
+        ],
+        "docstring": "",
+        "namespace": "logseq.api.block",
+        "file": "api/block.cljs"
+      },
+      {
+        "name": "get-db-ident-for-user-property-name",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "logseq.api.block",
+        "file": "api/block.cljs"
+      },
+      {
+        "name": "plugin-property-key?",
+        "parameters": [
+          "ident"
+        ],
+        "docstring": "",
+        "namespace": "logseq.api.block",
+        "file": "api/block.cljs"
+      },
+      {
+        "name": "into-readable-db-properties",
+        "parameters": [
+          "properties"
+        ],
+        "docstring": "",
+        "namespace": "logseq.api.block",
+        "file": "api/block.cljs"
+      },
+      {
+        "name": "into-properties",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "logseq.api.block",
+        "file": "api/block.cljs"
+      },
+      {
+        "name": "parse-property-json-value-if-need",
+        "parameters": [
+          "ident",
+          "property-value"
+        ],
+        "docstring": "",
+        "namespace": "logseq.api.block",
+        "file": "api/block.cljs"
+      },
+      {
+        "name": "infer-property-value-type-to-save!",
+        "parameters": [
+          "ident",
+          "value"
+        ],
+        "docstring": "",
+        "namespace": "logseq.api.block",
+        "file": "api/block.cljs"
+      },
+      {
+        "name": "save-db-based-block-properties!",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "logseq.api.block",
+        "file": "api/block.cljs"
+      },
+      {
+        "name": "<sync-children-blocks!",
+        "parameters": [
+          "block"
+        ],
+        "docstring": "",
+        "namespace": "logseq.api.block",
+        "file": "api/block.cljs"
+      },
+      {
+        "name": "get_block",
+        "parameters": [
+          "id-or-uuid",
+          "opts"
+        ],
+        "docstring": "",
+        "namespace": "logseq.api.block",
+        "file": "api/block.cljs"
+      },
+      {
+        "name": "new_block_uuid",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "insert_block",
+        "parameters": [
+          "block-uuid-or-page-name",
+          "content",
+          "opts"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "upsert_block_property",
+        "parameters": [
+          "block-uuid",
+          "key",
+          "value"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "remove_block_property",
+        "parameters": [
+          "block-uuid",
+          "key"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "get_block_property",
+        "parameters": [
+          "block-uuid",
+          "key"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "prepend_block_in_page",
+        "parameters": [
+          "uuid-or-page-name",
+          "content",
+          "opts"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "append_block_in_page",
+        "parameters": [
+          "uuid-or-page-name",
+          "content",
+          "opts"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      }
+    ],
+    "Page Operations": [
+      {
+        "name": "get_page",
+        "parameters": [
+          "id-or-page-name"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "get_all_pages",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "create_page",
+        "parameters": [
+          "name",
+          "properties",
+          "opts"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "create_journal_page",
+        "parameters": [
+          "date"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "delete_page",
+        "parameters": [
+          "name"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "get_page_properties",
+        "parameters": [
+          "id-or-page-name"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "get_page_linked_references",
+        "parameters": [
+          "page-name-or-uuid"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "get_pages_from_namespace",
+        "parameters": [
+          "ns"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "get_pages_tree_from_namespace",
+        "parameters": [
+          "ns"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "download_graph_pages",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "cp_page_editor",
+        "parameters": [
+          "props"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.experiments",
+        "file": "sdk/experiments.cljs"
+      }
+    ],
+    "Database Queries": [
+      {
+        "name": "datascript_query",
+        "parameters": [
+          "query",
+          "&",
+          "inputs"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "custom_query",
+        "parameters": [
+          "query-string"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "download_graph_db",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "query_element_rect",
+        "parameters": [
+          "selector"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.ui",
+        "file": "sdk/ui.cljs"
+      },
+      {
+        "name": "query_element_by_id",
+        "parameters": [
+          "id"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.ui",
+        "file": "sdk/ui.cljs"
+      }
+    ],
+    "File System": [
+      {
+        "name": "write_dotdir_file",
+        "parameters": [
+          "file",
+          "content",
+          "sub-root"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "write_assetsdir_file",
+        "parameters": [
+          "file",
+          "content",
+          "sub-root"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "list_files_of_current_graph",
+        "parameters": [
+          "exts"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.assets",
+        "file": "sdk/assets.cljs"
+      },
+      {
+        "name": "load_ignore_file",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "logseq.sdk.git",
+        "file": "sdk/git.cljs"
+      },
+      {
+        "name": "save_ignore_file",
+        "parameters": [
+          "content"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.git",
+        "file": "sdk/git.cljs"
+      }
+    ],
+    "Plugin System": [
+      {
+        "name": "install-plugin-hook",
+        "parameters": [
+          "pid",
+          "hook",
+          "opts"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "uninstall-plugin-hook",
+        "parameters": [
+          "pid",
+          "hook-or-all"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "should-exec-plugin-hook",
+        "parameters": [
+          "pid",
+          "hook"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "load_installed_web_plugins",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "save_installed_web_plugin",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "unlink_installed_web_plugin",
+        "parameters": [
+          "key"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "unregister_plugin_simple_command",
+        "parameters": [
+          "pid"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "get_external_plugin",
+        "parameters": [
+          "pid"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "invoke_external_plugin_cmd",
+        "parameters": [
+          "pid",
+          "cmd-group",
+          "cmd-key",
+          "cmd-args"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "validate_external_plugins",
+        "parameters": [
+          "urls"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "get-caller-plugin-id",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      }
+    ],
+    "UI Components": [
+      {
+        "name": "built_in_open",
+        "parameters": [
+          "asset-file"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.assets",
+        "file": "sdk/assets.cljs"
+      },
+      {
+        "name": "register_fenced_code_renderer",
+        "parameters": [
+          "pid",
+          "type",
+          "opts"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.experiments",
+        "file": "sdk/experiments.cljs"
+      },
+      {
+        "name": "register_route_renderer",
+        "parameters": [
+          "pid",
+          "key",
+          "opts"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.experiments",
+        "file": "sdk/experiments.cljs"
+      },
+      {
+        "name": "register_daemon_renderer",
+        "parameters": [
+          "pid",
+          "key",
+          "opts"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.experiments",
+        "file": "sdk/experiments.cljs"
+      },
+      {
+        "name": "show_msg",
+        "parameters": [
+          "&",
+          "args"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.ui",
+        "file": "sdk/ui.cljs"
+      },
+      {
+        "name": "close_msg",
+        "parameters": [
+          "key"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.ui",
+        "file": "sdk/ui.cljs"
+      },
+      {
+        "name": "check_slot_valid",
+        "parameters": [
+          "slot"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.ui",
+        "file": "sdk/ui.cljs"
+      },
+      {
+        "name": "resolve_theme_css_props_vals",
+        "parameters": [
+          "props"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.ui",
+        "file": "sdk/ui.cljs"
+      },
+      {
+        "name": "show_msg",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "logseq.sdk.ui",
+        "file": "sdk/ui.cljs"
+      },
+      {
+        "name": "uuid-or-throw-error",
+        "parameters": [
+          "s"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.utils",
+        "file": "sdk/utils.cljs"
+      }
+    ],
+    "State Management": [
+      {
+        "name": "get_state_from_store",
+        "parameters": [
+          "path"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "set_state_from_store",
+        "parameters": [
+          "path",
+          "value"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "set_focused_settings",
+        "parameters": [
+          "pid"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "log_app_state",
+        "parameters": [
+          "path"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "sdk/debug.cljs"
+      }
+    ],
+    "Search Functions": [
+      {
+        "name": "register_search_service",
+        "parameters": [
+          "pid",
+          "name",
+          "opts"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "unregister_search_services",
+        "parameters": [
+          "pid"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "search",
+        "parameters": [
+          "q'",
+          "&",
+          "[opts"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      }
+    ],
+    "Configuration": [],
+    "Utilities": [
+      {
+        "name": "normalize-keyword-for-json",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "logseq.sdk.utils",
+        "file": "sdk/utils.cljs"
+      },
+      {
+        "name": "jsx->clj",
+        "parameters": [
+          "obj"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.utils",
+        "file": "sdk/utils.cljs"
+      }
+    ],
+    "Other": [
+      {
+        "name": "get_app_info",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "open_in_right_sidebar",
+        "parameters": [
+          "block-id-or-uuid"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "get_property",
+        "parameters": [
+          "k"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "upsert_property",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "remove_property",
+        "parameters": [
+          "k"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "q",
+        "parameters": [
+          "query-string"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "exec_git_command",
+        "parameters": [
+          "args"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "exper_load_scripts",
+        "parameters": [
+          "pid",
+          "&",
+          "scripts"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "exper_request",
+        "parameters": [
+          "pid",
+          "options"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "http_request_abort",
+        "parameters": [
+          "req-id"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "get_template",
+        "parameters": [
+          "name"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "insert_template",
+        "parameters": [
+          "target-uuid",
+          "template-name"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "exist_template",
+        "parameters": [
+          "name"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "create_template",
+        "parameters": [
+          "target-uuid",
+          "template-name",
+          "opts"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "remove_template",
+        "parameters": [
+          "name"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "force_save_graph",
+        "parameters": [],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "get-property",
+        "parameters": [
+          "plugin",
+          "k"
+        ],
+        "docstring": "",
+        "namespace": "^:no-doc",
+        "file": "api.cljs"
+      },
+      {
+        "name": "register_extensions_enhancer",
+        "parameters": [
+          "pid",
+          "type",
+          "enhancer"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.experiments",
+        "file": "sdk/experiments.cljs"
+      },
+      {
+        "name": "exec_command",
+        "parameters": [
+          "args"
+        ],
+        "docstring": "",
+        "namespace": "logseq.sdk.git",
+        "file": "sdk/git.cljs"
+      }
+    ]
+  },
+  "statistics": {
+    "totalExported": 71,
+    "totalAnalyzed": 89,
+    "namespaces": 7,
+    "categories": 10
+  },
+  "generatedAt": "2025-09-17T14:52:42.969Z"
+}
