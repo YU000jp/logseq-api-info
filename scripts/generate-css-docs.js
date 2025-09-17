@@ -365,7 +365,10 @@ Logseq provides extensive CSS custom properties for theme customization:
   colorVariables.slice(0, 10).forEach(variable => {
     markdown += `  ${variable.name}: ${variable.value};\n`;
   });
-  markdown += `  /* ... and ${colorVariables.length - 10} more color variables */\n}\n\`\`\`\n\n`;
+  if (colorVariables.length > 10) {
+    markdown += `  /* ... and ${colorVariables.length - 10} more color variables */\n`;
+  }
+  markdown += `}\n\`\`\`\n\n`;
 
   markdown += `### Typography Variables\n`;
   const fontVariables = allVariables.filter(v => v.name.includes('font') || v.name.includes('text'));
