@@ -332,8 +332,8 @@ This repository is a **specialized fork** of the main Logseq repository, focused
    - Use `docs/generated/plugin-api-reference.md` for TypeScript definitions
 
 2. **Choose Your Development Approach**: 
-   - **TypeScript**: Use the [TypeScript template](https://github.com/logseq/logseq-plugin-template-typescript) with full type safety
-   - **JavaScript**: Use the [JavaScript template](https://github.com/logseq/logseq-plugin-template) for simplicity
+   - **TypeScript**: Use with full type safety
+   - **JavaScript**: Use for simplicity
    - **ClojureScript**: Integrate directly with the core API (advanced developers)
 
 3. **Set Up Your Environment**: 
@@ -414,14 +414,8 @@ This repository is a **specialized fork** of the main Logseq repository, focused
 ### Community Resources
 - **[Discord](https://discord.gg/KpN4eHY)** - Join the community chat
 - **[Forum](https://discuss.logseq.com/)** - Community discussions and support
-- **[Plugin Marketplace](https://github.com/logseq/marketplace)** - Browse and submit plugins
-- **[Theme Gallery](https://github.com/logseq/awesome-logseq#-themes)** - Community themes
 
 ### Developer Tools & Templates
-- **[Plugin Template (JavaScript)](https://github.com/logseq/logseq-plugin-template)** - Official JavaScript plugin starter template
-- **[TypeScript Plugin Template](https://github.com/logseq/logseq-plugin-template-typescript)** - Official TypeScript plugin template
-- **[Plugin SDK](https://github.com/logseq/logseq-plugin-sdk)** - Development tools and utilities
-- **[Vite Plugin Template](https://github.com/logseq/vite-plugin-template)** - Modern plugin development template with Vite
 - **[@logseq/libs](https://www.npmjs.com/package/@logseq/libs)** - TypeScript SDK package on NPM
 - **[Plugin Samples](https://github.com/logseq/logseq-plugin-samples)** - Example plugins and code samples
 
