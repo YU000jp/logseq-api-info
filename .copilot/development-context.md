@@ -2,7 +2,7 @@
 
 ## Coding Patterns and Conventions
 
-### ClojureScript Conventions (90% of codebase)
+### ClojureScript Conventions (approx. 90% of codebase)
 - **Namespace Organization**: Hierarchical namespaces (e.g., `frontend.handler.editor`)
 - **Naming**: Kebab-case for functions and variables, PascalCase for React components
 - **State Management**: Centralized state in `frontend.state` namespace with reactive atoms
