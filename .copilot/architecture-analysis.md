@@ -10,6 +10,11 @@ Logseq is built as a **local-first, cross-platform application** with the follow
 - **TypeScript** (8%): Plugin SDK, type definitions, development tooling
 - **JavaScript** (2%): Native integrations, external libraries, build tools
 
+> **Note:** Language percentages are approximate and were last estimated on 2024-06-01. For precise figures, run [`cloc`](https://github.com/AlDanial/cloc) on the codebase:
+> ```
+> cloc .
+> ```
+> Please update this section if the codebase changes significantly.
 #### Core Frameworks
 - **React 18.3.1**: UI framework with functional components
 - **Rum**: ClojureScript React wrapper with enhanced state management
