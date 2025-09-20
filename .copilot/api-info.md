@@ -4,6 +4,12 @@
 
 The Logseq Plugin API consists of both ClojureScript implementation (`src/main/logseq/`) and **TypeScript SDK** (`libs/`) providing complete type safety for plugin development.
 
+### Architecture Components
+1. **ClojureScript Core API** (`src/main/logseq/api.cljs`) - 3,000+ lines of API implementation
+2. **TypeScript SDK** (`libs/`) - Type-safe plugin development framework  
+3. **Plugin SDK Utilities** (`src/main/logseq/sdk/`) - ClojureScript SDK with 8 specialized modules
+4. **Frontend Integration** (`src/main/frontend/`) - 80+ components and handlers for UI integration
+
 ### 1. TypeScript SDK (`libs/`)
 The TypeScript SDK provides complete type definitions and utilities for plugin development:
 
@@ -42,25 +48,29 @@ declare global {
 ```
 
 ### 2. Core API (`src/main/logseq/api.cljs`)
-The main API namespace that exposes functionality to plugins. This includes:
+The main API namespace that exposes functionality to plugins. This massive file contains over 3,000 lines of API implementation with 60+ imports from core Logseq systems.
 
 #### Key API Categories:
-- **Database Operations**: Query, create, update blocks and pages
-- **UI Manipulation**: Interact with the editor, create UI elements
-- **File System**: Read/write files, asset management  
-- **Search**: Full-text search, block search
-- **Commands**: Register custom commands and shortcuts
-- **Events**: Plugin lifecycle and application event handling
-- **Configuration**: Access and modify app/plugin settings
+- **Database Operations**: Query, create, update blocks and pages (powered by DataScript)
+- **UI Manipulation**: Interact with the editor, create UI elements, slot management
+- **File System**: Read/write files, asset management, sync operations
+- **Search**: Full-text search, block search, fuzzy matching
+- **Commands**: Register custom commands and shortcuts, command palette integration
+- **Events**: Plugin lifecycle and application event handling (60+ event types)
+- **Configuration**: Access and modify app/plugin settings, user preferences
+- **Themes**: Theme management, CSS injection, dark/light mode support
+- **Git Integration**: Version control operations and history tracking
 
-#### Import Dependencies:
-The API integrates with core Logseq systems:
-- DataScript database operations (`datascript.core`)
-- Frontend state management (`frontend.state`)
-- Database models and queries (`frontend.db.*`)
-- Handlers for various operations (`frontend.handler.*`)
-- Editor functionality (`frontend.handler.editor`)
-- Search capabilities (`frontend.handler.search`)
+#### Core Integration Dependencies:
+The API deeply integrates with Logseq's architecture through 60+ namespace imports:
+- **DataScript Database**: `datascript.core` for graph database operations
+- **State Management**: `frontend.state` for application state
+- **Database Layer**: `frontend.db.*` for data models and queries (15 modules)
+- **Handlers**: `frontend.handler.*` for business logic (20+ handlers)
+- **Editor System**: `frontend.handler.editor` for text editing and blocks
+- **Search Engine**: `frontend.handler.search` for content discovery
+- **File System**: `frontend.fs` for file operations and sync
+- **Configuration**: `frontend.config` for settings and preferences
 
 ### 3. ClojureScript SDK (`src/main/logseq/sdk/`)
 Software Development Kit providing utilities for plugin development:
