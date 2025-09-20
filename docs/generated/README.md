@@ -86,5 +86,5 @@ Run `npm run docs:generate` to update all documentation.
 
 ---
 
-*Last generated: 2025-09-17T14:41:07.685Z*
+*Last generated: 2025-09-20T09:26:41.213Z*
 *Generated from Logseq codebase*
