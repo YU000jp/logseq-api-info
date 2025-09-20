@@ -52,41 +52,41 @@ Logseq provides extensive CSS custom properties for theme customization:
 ### Core Components
 - `.ls-center`
 - `.ls-page-title-container`
+- `.ls-block`
 - `.ls-table-cell`
+- `.cp__header-logo`
 - `.ls-grid-cols`
 - `.ls-cards`
 - `.ls-card-item`
+- `.ls-page-title`
+- `.ls-icon-color-wrap`
 - `.ls-page-title-actions`
-- `.ls-block`
+- `.ls-table`
 - `.ls-block-right`
 - `.ls-properties-area`
 - `.ls-card`
 - `.cp__fenced-code-block`
 - `.cp__right-sidebar-inner`
-- `.ls-page-title`
-- `.ls-code-editor-wrap`
-- `.ls-resize-image`
-- `.ls-filters`
-- `.ls-dialog-block`
-- `.cp__bug-report-reporter`
-- `.cp__bug-report-item-button`
+- `.ls-small-icon`
+- `.ls-type-warning`
+- `.ls-page-icon`
 
 ### Block and Page Components
+- `.block-content-or-editor-wrap`
+- `.block-body`
 - `.page-drop-options`
+- `.block-highlight`
 - `.block-title-wrap`
+- `.page-op`
 - `.block-content-wrapper`
 - `.block-content`
-- `.block-content-or-editor-wrap`
 - `.block-content-or-editor-inner`
 - `.block-head-wrap`
 - `.page-ref`
 - `.block-parents`
-- `.block-body`
 - `.block-children-container`
 - `.block-children-left-border`
 - `.block-children`
-- `.block-control-wrap`
-- `.block-control`
 
 
 ## Theme Structure Example

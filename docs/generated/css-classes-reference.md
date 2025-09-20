@@ -6,6 +6,41 @@
 
 These classes are used for specific Logseq UI components:
 
+### BLOCK Components
+
+- `.block-add-button`
+- `.block-below`
+- `.block-body`
+- `.block-children`
+- `.block-children-container`
+- `.block-children-left-border`
+- `.block-content`
+- `.block-content-inner`
+- `.block-content-or-editor-inner`
+- `.block-content-or-editor-wrap`
+- `.block-content-wrapper`
+- `.block-control`
+- `.block-control-wrap`
+- `.block-head-wrap`
+- `.block-highlight`
+- `.block-left`
+- `.block-left-menu`
+- `.block-main-container`
+- `.block-main-content`
+- `.block-marker`
+- `.block-parents`
+- `.block-properties`
+- `.block-property-value`
+- `.block-ref`
+- `.block-ref-no-title`
+- `.block-right`
+- `.block-right-menu`
+- `.block-row`
+- `.block-slotted-body`
+- `.block-tag`
+- `.block-tags`
+- `.block-title-wrap`
+
 ### LS Components
 
 - `.ls-all-pages`
@@ -19,6 +54,7 @@ These classes are used for specific Logseq UI components:
 - `.ls-center`
 - `.ls-code-editor-wrap`
 - `.ls-context-menu-content`
+- `.ls-datetime`
 - `.ls-dialog-block`
 - `.ls-dialog-cmdk`
 - `.ls-dialog-select`
@@ -30,16 +66,21 @@ These classes are used for specific Logseq UI components:
 - `.ls-font-mono`
 - `.ls-font-serif`
 - `.ls-grid-cols`
+- `.ls-hl-colored`
 - `.ls-icon`
+- `.ls-icon-color-wrap`
 - `.ls-icon-grip-vertical`
 - `.ls-icon-picker`
+- `.ls-icon-plus`
 - `.ls-icon-priorityLvlUrgent`
 - `.ls-icon-queryCode`
 - `.ls-icon-search`
 - `.ls-icon-thumb-up`
 - `.ls-left-sidebar-open`
+- `.ls-new-property`
 - `.ls-number`
 - `.ls-page-blocks`
+- `.ls-page-icon`
 - `.ls-page-properties`
 - `.ls-page-title`
 - `.ls-page-title-actions`
@@ -52,10 +93,14 @@ These classes are used for specific Logseq UI components:
 - `.ls-property-dropdown`
 - `.ls-property-input`
 - `.ls-property-key`
+- `.ls-property-name-edit-pane`
 - `.ls-property-ui-position-sub-pane`
+- `.ls-repeat-task-frequency`
 - `.ls-resize-image`
 - `.ls-right-sidebar-open`
 - `.ls-search`
+- `.ls-sidebar-page-properties`
+- `.ls-small-icon`
 - `.ls-table`
 - `.ls-table-block`
 - `.ls-table-cell`
@@ -65,17 +110,23 @@ These classes are used for specific Logseq UI components:
 - `.ls-table-resize-handle`
 - `.ls-table-row`
 - `.ls-table-rows`
+- `.ls-type-warning`
 - `.ls-ui-float-content`
 - `.ls-view-order-setting`
 - `.ls-wide-mode`
 - `.ls-window-controls`
+- `.ls-wrap-widen`
 
 ### PAGE Components
 
+- `.page-add-tags`
+- `.page-blocks-collapse-control`
 - `.page-blocks-inner`
 - `.page-configure`
 - `.page-drop-options`
 - `.page-icon`
+- `.page-linked`
+- `.page-op`
 - `.page-properties`
 - `.page-property-key`
 - `.page-ref`
@@ -83,34 +134,6 @@ These classes are used for specific Logseq UI components:
 - `.page-tags`
 - `.page-title`
 - `.page-title-sizer-wrapper`
-
-### BLOCK Components
-
-- `.block-add-button`
-- `.block-body`
-- `.block-children`
-- `.block-children-container`
-- `.block-children-left-border`
-- `.block-content`
-- `.block-content-or-editor-inner`
-- `.block-content-or-editor-wrap`
-- `.block-content-wrapper`
-- `.block-control`
-- `.block-control-wrap`
-- `.block-head-wrap`
-- `.block-left-menu`
-- `.block-main-container`
-- `.block-marker`
-- `.block-parents`
-- `.block-property-value`
-- `.block-ref`
-- `.block-ref-no-title`
-- `.block-right-menu`
-- `.block-row`
-- `.block-slotted-body`
-- `.block-tag`
-- `.block-tags`
-- `.block-title-wrap`
 
 ### CP Components
 
@@ -157,6 +180,7 @@ These classes are used for specific Logseq UI components:
 - `.cp__repos-select`
 - `.cp__right-sidebar`
 - `.cp__right-sidebar-inner`
+- `.cp__right-sidebar-settings`
 - `.cp__right-sidebar-settings-btn`
 - `.cp__right-sidebar-topbar`
 - `.cp__rtc-sync`
@@ -183,6 +207,10 @@ These classes are used for specific Logseq UI components:
 - `.cp__vertical-menu-button`
 - `.cp__whiteboard-welcome`
 
+### EDITOR Components
+
+- `.editor-inner`
+
 ### SIDEBAR Components
 
 - `.sidebar-content-group`
@@ -196,19 +224,68 @@ These classes are used for specific Logseq UI components:
 - `.sidebar-item-list`
 - `.sidebar-navigations`
 
-### EDITOR Components
-
-- `.editor-inner`
-
 ## Utility Classes
 
 General utility classes:
 
+- `.02`
+- `.05`
+- `.06`
+- `.08`
+- `.1`
+- `.12em`
+- `.15`
+- `.15em`
+- `.15s`
+- `.1s`
+- `.2`
+- `.24em`
+- `.25`
+- `.25em`
+- `.25rem`
+- `.2em`
+- `.2rem`
+- `.2s`
+- `.3`
+- `.35em`
+- `.38em`
+- `.3rem`
+- `.3s`
+- `.4`
+- `.45`
+- `.45em`
+- `.4s`
+- `.5`
+- `.59`
+- `.5em`
+- `.5px`
+- `.5rem`
+- `.5s`
+- `.6`
+- `.67`
+- `.67em`
+- `.6rem`
+- `.7`
+- `.75`
+- `.75em`
+- `.75rem`
+- `.8`
+- `.83em`
+- `.83rem`
+- `.86`
+- `.9`
+- `.9em`
 - `.CodeMirror`
 - `.CodeMirror-activeline-background`
+- `.CodeMirror-focused`
+- `.CodeMirror-gutter`
+- `.CodeMirror-gutters`
 - `.CodeMirror-hscrollbar`
 - `.CodeMirror-line`
 - `.CodeMirror-linenumber`
+- `.CodeMirror-scroll`
+- `.CodeMirror-sizer`
+- `.JS`
 - `.a`
 - `.absolute-modal`
 - `.action-bar`
@@ -246,12 +323,17 @@ General utility classes:
 - `.as-flex-center`
 - `.as-heading`
 - `.as-inline`
+- `.as-input`
 - `.as-modal-picker`
 - `.as-object`
 - `.as-order-list`
 - `.as-page`
 - `.as-primary`
+- `.as-scalar-value-wrap`
 - `.as-toggle`
+- `.aspect-ratio-16`
+- `.aspect-ratio-21`
+- `.aspect-ratio-4`
 - `.aspect-ratio-square`
 - `.aspect-video`
 - `.asset-action-bar`
@@ -273,6 +355,7 @@ General utility classes:
 - `.bg-warning`
 - `.bl`
 - `.blocks-container`
+- `.blocks-selection-mode`
 - `.bracket`
 - `.breadcrumb`
 - `.btn`
@@ -285,11 +368,13 @@ General utility classes:
 - `.button`
 - `.buttons`
 - `.c`
+- `.canceled`
 - `.cancelled`
 - `.cards-review`
 - `.cards-title`
 - `.categories-list`
 - `.category-card`
+- `.center`
 - `.chapters`
 - `.chapters-select`
 - `.checked`
@@ -304,6 +389,7 @@ General utility classes:
 - `.clauses-group`
 - `.close`
 - `.closed`
+- `.cloud`
 - `.cloud-tip`
 - `.cloze`
 - `.cloze-revealed`
@@ -322,6 +408,8 @@ General utility classes:
 - `.color-level-6`
 - `.color-picker`
 - `.color-picker-presets`
+- `.com`
+- `.command-results-wrap`
 - `.commands-button`
 - `.content`
 - `.contribute`
@@ -330,11 +418,13 @@ General utility classes:
 - `.control-link`
 - `.control-tabs`
 - `.create`
+- `.css`
 - `.ct`
 - `.ctl`
 - `.ctls`
 - `.ctrls`
 - `.cursor`
+- `.cursor-pointer`
 - `.cursor-w-resize`
 - `.custom-query`
 - `.custom-query-page-result`
@@ -350,6 +440,7 @@ General utility classes:
 - `.dashboard-create-card`
 - `.dashboard-create-card-caption`
 - `.dashboard-preview-card`
+- `.data-`
 - `.de`
 - `.debug-status`
 - `.del`
@@ -361,12 +452,14 @@ General utility classes:
 - `.disabled`
 - `.disabled-text-selection`
 - `.dnd-separator`
+- `.doc-mode`
 - `.document-mode`
 - `.done`
 - `.drag-over`
 - `.drag-region`
 - `.draggable-handle`
 - `.dragging-target`
+- `.draw`
 - `.dropdown-caret`
 - `.dropdown-wrapper`
 - `.dsl-query`
@@ -378,11 +471,14 @@ General utility classes:
 - `.embed-header`
 - `.embed-page`
 - `.embed-responsive`
+- `.embed-responsive-item`
+- `.empty-btn`
 - `.empty-text-btn`
 - `.empty-value`
 - `.enter-show-more`
 - `.err`
 - `.error`
+- `.export`
 - `.ext-input`
 - `.ext-label`
 - `.ext-select-item`
@@ -392,11 +488,14 @@ General utility classes:
 - `.extensions__pdf-container`
 - `.extensions__pdf-hls-area-region`
 - `.extensions__pdf-loader`
+- `.extensions__pdf-outline-item`
 - `.extensions__pdf-toolbar`
 - `.external-link`
 - `.extra-item`
 - `.fade-enter`
+- `.fade-enter-active`
 - `.fade-exit`
+- `.fade-exit-active`
 - `.fade-in`
 - `.fade-link`
 - `.fake-bar`
@@ -404,6 +503,10 @@ General utility classes:
 - `.federated-sign-in-container`
 - `.file`
 - `.file-item`
+- `.file-sync-item`
+- `.files-history`
+- `.filter`
+- `.filter-item`
 - `.fixed-width`
 - `.flag`
 - `.fold`
@@ -425,16 +528,19 @@ General utility classes:
 - `.graph-icon`
 - `.graph-layout`
 - `.grid-auto-fit`
+- `.group-list-view`
 - `.h1`
 - `.h2`
 - `.h3`
 - `.h4`
 - `.h5`
 - `.h6`
+- `.handle-left`
 - `.handle-right`
 - `.has-children`
 - `.has-help`
 - `.has-installing`
+- `.has-new-version`
 - `.has-virtual-list`
 - `.hash-symbol`
 - `.hd`
@@ -444,25 +550,51 @@ General utility classes:
 - `.header`
 - `.heading-bg`
 - `.heading-item`
+- `.hidden-block`
+- `.hide-inner-bullet`
 - `.hide-scrollbar`
 - `.highlight`
+- `.highlightAnnotation`
 - `.highlighted`
 - `.hints`
 - `.hl-area`
 - `.hl-flash`
 - `.hl-page`
 - `.hljs`
+- `.hljs-addition`
 - `.hljs-attribute`
+- `.hljs-built_in`
+- `.hljs-bullet`
+- `.hljs-class`
+- `.hljs-code`
+- `.hljs-comment`
 - `.hljs-deletion`
+- `.hljs-doctag`
+- `.hljs-emphasis`
+- `.hljs-keyword`
 - `.hljs-link`
+- `.hljs-literal`
 - `.hljs-meta`
+- `.hljs-name`
 - `.hljs-number`
+- `.hljs-quote`
+- `.hljs-regexp`
 - `.hljs-section`
+- `.hljs-selector-attr`
 - `.hljs-selector-class`
 - `.hljs-selector-id`
+- `.hljs-selector-pseudo`
+- `.hljs-selector-tag`
+- `.hljs-string`
 - `.hljs-strong`
+- `.hljs-subst`
 - `.hljs-symbol`
+- `.hljs-tag`
+- `.hljs-template-tag`
 - `.hljs-template-variable`
+- `.hljs-title`
+- `.hljs-type`
+- `.hljs-variable`
 - `.hls-popup`
 - `.hls-popup-box`
 - `.hls-popup-overlay`
@@ -480,6 +612,7 @@ General utility classes:
 - `.icon-wrap`
 - `.iconTablerExtBacklog`
 - `.iconTablerExtCancelled`
+- `.icons`
 - `.icons-row`
 - `.idle`
 - `.importer`
@@ -490,8 +623,10 @@ General utility classes:
 - `.info`
 - `.init-remote-pw-tips`
 - `.initial`
+- `.initial-color`
 - `.injected-ui-item-pagebar`
 - `.injected-ui-item-toolbar`
+- `.inline`
 - `.inner`
 - `.inner-card`
 - `.inner-wrap`
@@ -510,13 +645,17 @@ General utility classes:
 - `.is-del`
 - `.is-doc`
 - `.is-dragging`
+- `.is-electron`
 - `.is-empty-input`
 - `.is-enabled-progress-pane`
 - `.is-expand`
 - `.is-file`
+- `.is-first`
 - `.is-first-placeholder`
+- `.is-fullscreen`
 - `.is-ios`
 - `.is-left-sidebar-open`
+- `.is-linux`
 - `.is-list-active`
 - `.is-list-ready`
 - `.is-long`
@@ -533,10 +672,12 @@ General utility classes:
 - `.is-order-list`
 - `.is-overflow-vh-y`
 - `.is-overflow-vw-x`
+- `.is-pdf`
 - `.is-pdf-active`
 - `.is-plus`
 - `.is-resizing`
 - `.is-resizing-buf`
+- `.is-safari`
 - `.is-scrolled`
 - `.is-selected`
 - `.is-small`
@@ -552,12 +693,16 @@ General utility classes:
 - `.item-colors`
 - `.item-link`
 - `.item-results-wrap`
+- `.item-type-block`
 - `.item-wrap`
+- `.its`
 - `.journal-item`
 - `.journal-last-item`
+- `.journal-title`
 - `.jtrigger`
 - `.jtrigger-id`
 - `.jtrigger-view`
+- `.katex`
 - `.katex-html`
 - `.keyboard-filter`
 - `.keyboard-filter-record`
@@ -575,11 +720,14 @@ General utility classes:
 - `.list-wrap`
 - `.load-unpacked`
 - `.loading-asset`
+- `.loadingIcon`
 - `.locked-scroll`
 - `.log`
 - `.login`
 - `.lsp-frame-readme`
 - `.lsp-hook-ui-slot`
+- `.lsp-iframe-sandbox`
+- `.lsp-shadow-sandbox`
 - `.lsp-ui-float`
 - `.lsp-ui-float-container`
 - `.markdown-body`
@@ -602,16 +750,20 @@ General utility classes:
 - `.more`
 - `.more-do`
 - `.multi-values`
+- `.multiline-block`
 - `.name`
 - `.nav-content-item`
 - `.nav-content-item-inner`
+- `.nav-item`
 - `.navigation`
 - `.no-aside`
 - `.no-padding`
 - `.no-repos`
 - `.no-ring`
+- `.non-block-editor`
 - `.non-collapsable`
 - `.noscroll`
+- `.not-collapsed`
 - `.not-edit`
 - `.note`
 - `.notification-area`
@@ -626,6 +778,7 @@ General utility classes:
 - `.open-page-ref-link`
 - `.order-button`
 - `.out-icloud`
+- `.outdent`
 - `.overdue`
 - `.overflow-y-scroll`
 - `.page`
@@ -640,6 +793,7 @@ General utility classes:
 - `.picked`
 - `.pin`
 - `.pinned`
+- `.png`
 - `.positioned-properties`
 - `.post`
 - `.pre-line-white-space`
@@ -648,7 +802,9 @@ General utility classes:
 - `.preboot-loading`
 - `.prefix-link`
 - `.preview-ref-link`
+- `.preview-trigger-wrapper`
 - `.priority`
+- `.private-tag`
 - `.progress-bar`
 - `.property-block`
 - `.property-block-container`
@@ -666,22 +822,30 @@ General utility classes:
 - `.property-value-container`
 - `.property-value-content`
 - `.property-value-inner`
+- `.pull`
 - `.py-1`
 - `.query-builder-picker`
+- `.query-clause`
 - `.query-clause-btn`
+- `.query-table`
 - `.query-title`
 - `.queuing`
 - `.r`
+- `.radix`
+- `.raw-content-editor`
 - `.ready-loading`
 - `.recent-block`
 - `.recent-slider`
 - `.references`
 - `.references-blocks`
 - `.references-blocks-item`
+- `.refresh`
 - `.relative`
 - `.remove`
 - `.repo-name`
+- `.repo-plus`
 - `.repo-switch`
+- `.repo-text`
 - `.repos-list`
 - `.resizable-handle`
 - `.resize`
@@ -690,6 +854,7 @@ General utility classes:
 - `.result-inner`
 - `.right`
 - `.right-sidebar-button`
+- `.rotating-arrow`
 - `.row`
 - `.s1`
 - `.s2`
@@ -697,7 +862,9 @@ General utility classes:
 - `.scrolled`
 - `.search`
 - `.search-active`
+- `.search-all`
 - `.search-ctls`
+- `.search-filter-close`
 - `.search-input`
 - `.search-input-wrap`
 - `.search-more`
@@ -719,6 +886,7 @@ General utility classes:
 - `.shepherd-content`
 - `.shepherd-element`
 - `.shepherd-footer`
+- `.shepherd-modal-is-visible`
 - `.shepherd-modal-overlay-container`
 - `.shepherd-target`
 - `.shepherd-text`
@@ -728,18 +896,23 @@ General utility classes:
 - `.simple-input`
 - `.single-block`
 - `.small`
+- `.sort-or-filter-by`
 - `.sponsors`
+- `.star-page`
 - `.steps`
 - `.sticky-columns`
 - `.strength-item`
 - `.strength-wrap`
 - `.submenu`
+- `.svg-small`
 - `.swipe-item`
 - `.switcher`
 - `.sync-content`
 - `.syncing`
 - `.tab-item`
 - `.table-action-bar`
+- `.table-block-title`
+- `.table-query-properties`
 - `.tabs`
 - `.tag`
 - `.text-ellipsis-wrapper`
@@ -768,6 +941,7 @@ General utility classes:
 - `.title`
 - `.title-wrap`
 - `.tl-action-bar`
+- `.tl-logseq-cp-container`
 - `.tl-primary-tools`
 - `.tl-text-input`
 - `.to-heading-button`
@@ -778,8 +952,11 @@ General utility classes:
 - `.toolbar-hide-keyboard`
 - `.toolbar-plugins-manager`
 - `.tooltip-priority`
+- `.topic-card`
 - `.translate-x-5`
+- `.translated`
 - `.type-icon`
+- `.typed-list`
 - `.ui-fenced-code`
 - `.ui-fenced-code-editor`
 - `.ui-fenced-code-result`
@@ -790,6 +967,7 @@ General utility classes:
 - `.ui__checkbox-list`
 - `.ui__dialog-content`
 - `.ui__dialog-main-content`
+- `.ui__dialog-overlay`
 - `.ui__dropdown-menu-content`
 - `.ui__dropdown-menu-item`
 - `.ui__dropdown-menu-sub-content`
@@ -798,16 +976,19 @@ General utility classes:
 - `.ui__icon`
 - `.ui__input`
 - `.ui__modal`
+- `.ui__modal-close`
 - `.ui__modal-close-wrap`
 - `.ui__modal-panel`
 - `.ui__model`
 - `.ui__notifications`
+- `.ui__popover-content`
 - `.ui__radio-list`
 - `.ui__switch`
 - `.ui__toggle`
 - `.ui__toggle-background-off`
 - `.ui__toggle-background-on`
 - `.underlineAnnotation`
+- `.uniline-block`
 - `.update-state`
 - `.updates-actions`
 - `.updating`
@@ -821,10 +1002,13 @@ General utility classes:
 - `.virtuoso-grid-list`
 - `.virtuoso-item-list`
 - `.visible`
+- `.visible-scrollbar`
 - `.warm`
 - `.warning`
 - `.web-platform`
 - `.whiteboard-dashboard-bg-grid`
+- `.whiteboard-dashboard-title`
+- `.whiteboard-page`
 - `.whiteboard-page-refs`
 - `.whiteboard-page-refs-count`
 - `.whiteboard-page-refs-count-label`

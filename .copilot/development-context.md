@@ -2,24 +2,63 @@
 
 ## Coding Patterns and Conventions
 
-### ClojureScript Conventions
+### ClojureScript Conventions (approx. 90% of codebase)
 - **Namespace Organization**: Hierarchical namespaces (e.g., `frontend.handler.editor`)
-- **Naming**: Kebab-case for functions and variables, PascalCase for components
-- **State Management**: Centralized state in `frontend.state` namespace
-- **Data Structures**: Extensive use of immutable data structures and maps
+- **Naming**: Kebab-case for functions and variables, PascalCase for React components
+- **State Management**: Centralized state in `frontend.state` namespace with reactive atoms
+- **Data Structures**: Extensive use of immutable data structures and persistent collections
 - **Async Operations**: Promesa library for Promise-based async operations
+- **Error Handling**: Try-catch blocks with structured error reporting
 
-### React Component Patterns
-- **Rum Components**: ClojureScript wrapper around React
+### Component Architecture Patterns
+- **Rum Components**: ClojureScript wrapper around React (80+ components)
 - **Functional Components**: Prefer function-based components over classes
-- **Hooks Integration**: ClojureScript-friendly hook patterns
-- **State Local State**: Component-level state management patterns
+- **Hooks Integration**: ClojureScript-friendly hook patterns with `rum/use-state`
+- **State Management**: Mix of local component state and global application state
+- **Event Handling**: Reactive event system with pub-sub pattern
+
+### File Organization Patterns
+```
+src/main/frontend/
+├── components/           # 80+ UI components
+│   ├── block/           # Block system (10+ files)
+│   ├── editor.cljs      # Main editor component
+│   └── page.cljs        # Page management
+├── handler/             # 25+ business logic handlers
+│   ├── editor.cljs      # Editor operations (2,000+ lines)
+│   ├── db.cljs          # Database operations
+│   └── plugin.cljs      # Plugin integration
+├── db/                  # 15+ database modules
+│   ├── model.cljs       # Data models
+│   ├── query-dsl.cljs   # Query language
+│   └── utils.cljs       # Database utilities
+└── util/                # 20+ utility modules
+```
 
 ### Database Patterns
-- **DataScript Queries**: Datalog syntax for complex queries
-- **Entity-Relationship**: Graph-based data modeling with entities and references
-- **Reactive Queries**: Automatic UI updates when query results change
-- **Dual Schema**: Support for both file-based and database-based storage
+
+#### DataScript Query Patterns
+```clojure
+;; Simple entity lookup
+[:find ?e :where [?e :block/uuid uuid]]
+
+;; Complex graph queries with joins
+[:find (pull ?p [*])
+ :in $ ?page-name
+ :where 
+ [?p :page/name ?page-name]
+ [?b :block/page ?p]]
+
+;; Full-text search with filters
+[:find ?block
+ :where 
+ [(fulltext $ :block/content "search-term") [[?block _]]]
+ [?block :block/page ?page]]
+```
+
+#### Dual Storage Architecture
+1. **File-Based Mode**: Traditional markdown files with DataScript indexing
+2. **Database Mode**: SQLite backend with DataScript interface for compatibility
 
 ## Architecture Patterns
 
@@ -44,22 +83,32 @@
 ## Performance Considerations
 
 ### ClojureScript Optimization
-- **Advanced Compilation**: Google Closure Compiler optimizations
-- **Code Splitting**: Lazy loading of modules and components
-- **Bundle Size**: Careful dependency management
-- **Memory Management**: Immutable data structure efficiency
+- **Advanced Compilation**: Google Closure Compiler with :advanced optimizations
+- **Code Splitting**: Dynamic module loading for plugins and extensions
+- **Bundle Analysis**: Shadow-CLJS build reports for size optimization
+- **Memory Management**: Persistent data structures for efficient memory usage
+- **Dead Code Elimination**: Automatic removal of unused code paths
 
-### Database Performance
-- **Query Optimization**: Efficient DataScript query patterns
-- **Indexing**: Strategic use of database indices
-- **Caching**: Multiple levels of caching for frequently accessed data
-- **Incremental Updates**: Minimal DOM updates through React optimization
+### Database Performance (DataScript)
+- **Query Optimization**: Efficient DataScript query patterns with proper indexing
+- **Entity Caching**: Multi-level caching for frequently accessed entities
+- **Incremental Updates**: Minimal re-computation on data changes
+- **Batch Operations**: Transactional updates for multiple changes
+- **Large Graph Support**: Optimized for 100K+ blocks in database mode
 
 ### UI Performance
-- **Virtual Scrolling**: Efficient rendering of large lists (react-virtuoso)
-- **Component Memoization**: Prevent unnecessary re-renders
-- **Debouncing**: Input handling optimization
-- **Canvas Rendering**: PixiJS for performance-critical graphics
+- **Virtual Scrolling**: `react-virtuoso` for efficient rendering of large lists
+- **Component Memoization**: `rum/memo` to prevent unnecessary re-renders
+- **Debounced Inputs**: 300ms debouncing for search and text input
+- **Canvas Rendering**: PixiJS for performance-critical graphics (whiteboards)
+- **Lazy Loading**: Component-level code splitting and lazy mounting
+
+### Asset Optimization
+- **CSS Purging**: TailwindCSS removes unused styles in production
+- **Image Optimization**: Responsive images with proper sizing
+- **Font Loading**: Web font optimization with font-display swap
+- **JavaScript Minification**: Closure compiler optimizations
+- **Resource Hints**: Preloading critical resources
 
 ## Testing Strategy
 
