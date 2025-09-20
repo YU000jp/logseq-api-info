@@ -263,7 +263,7 @@ This repository is a **specialized fork** of the main Logseq repository, focused
 | Aspect | Main Repository | This Repository |
 |--------|----------------|-----------------|
 | **Purpose** | Application development | Developer documentation |
-| **Content** | Source code (100K+ lines) | Analysis & guides (focused) |
+| **Content** | Source code (approx. 100K+ lines) | Analysis & guides (focused) |
 | **Audience** | Core developers | Plugin & theme developers |
 | **Updates** | Daily commits | Analysis-driven updates |
 | **Documentation** | User-focused | Developer API-focused |
