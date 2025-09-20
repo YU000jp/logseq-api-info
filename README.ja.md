@@ -273,8 +273,8 @@ Logseq は主要なスタイリングフレームワークとして **TailwindCS
 
 1. **API を学習**：包括的な API ドキュメントについては `.copilot/api-info.md` を確認
 2. **言語を選択**：
-   - **TypeScript**: 型安全性のために [TypeScript テンプレート](https://github.com/logseq/logseq-plugin-template-typescript) を使用
-   - **JavaScript**: シンプルさのために [JavaScript テンプレート](https://github.com/logseq/logseq-plugin-template) を使用
+   - **TypeScript**: 型安全性のために
+   - **JavaScript**: シンプルさのために
 3. **依存関係をインストール**: TypeScript サポートや API アクセスのために `@logseq/libs` を追加
 4. **例を探索**：コミュニティのプラグイン例と `libs/src/` ディレクトリを見る
 5. **コミュニティに参加**：Discord で他の開発者とつながる
@@ -304,14 +304,9 @@ Logseq は主要なスタイリングフレームワークとして **TailwindCS
 ### コミュニティリソース
 - **[Discord](https://discord.gg/KpN4eHY)** - コミュニティチャットに参加
 - **[フォーラム](https://discuss.logseq.com/)** - コミュニティディスカッションとサポート
-- **[プラグインマーケットプレイス](https://github.com/logseq/marketplace)** - プラグインの閲覧と投稿
-- **[テーマギャラリー](https://github.com/logseq/awesome-logseq#-themes)** - コミュニティテーマ
 
 ### 開発者ツール
-- **[プラグインテンプレート (JavaScript)](https://github.com/logseq/logseq-plugin-template)** - 公式 JavaScript プラグインスターターテンプレート
-- **[TypeScript プラグインテンプレート](https://github.com/logseq/logseq-plugin-template-typescript)** - 公式 TypeScript プラグインテンプレート
-- **[プラグイン SDK](https://github.com/logseq/logseq-plugin-sdk)** - 開発ツールとユーティリティ
-- **[Vite プラグインテンプレート](https://github.com/logseq/vite-plugin-template)** - Vite を使ったモダンなプラグイン開発テンプレート
+
 - **[@logseq/libs](https://www.npmjs.com/package/@logseq/libs)** - NPM の TypeScript SDK パッケージ
 - **[プラグインサンプル](https://github.com/logseq/logseq-plugin-samples)** - プラグインの例とコードサンプル
 
